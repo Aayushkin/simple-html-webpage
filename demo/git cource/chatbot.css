@@ -1,3 +1,6 @@
+/* Responsive and Neon-themed Chatbot CSS */
+
+/* Base Styles */
 body {
     margin: 0;
     height: 100vh;
@@ -7,16 +10,37 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --neon-green: #00ff00;
+    --neon-pink: #ff00ff;
+    --neon-cyan: #00ffff;
+    --dark-bg: #1a1a1a;
+    --black: #000000;
 }
 
 .chat-container {
-    width: 100%;
-    height: 100%;
-    max-width: 10000px;
-    max-height: 6000px;
-    background: #000000;
+    display: none;
+}
+
+.modal {
+    display: none;
+}
+
+#login-modal, #signup-modal {
+    display: flex;
+}
+
+.chat-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    max-height: 800px;
+    background: var(--black);
     border-radius: 15px;
-    box-shadow: 0 0 20px #00ff00;
+    box-shadow: 0 0 20px var(--neon-green);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -24,99 +48,128 @@ body {
 }
 
 .chat-header {
-    background: #ff00ff;
-    color: #00ffff;
-    padding: 10px;
+    background: var(--neon-pink);
+    color: var(--neon-cyan);
+    padding: 10px 20px;
     text-align: center;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 13px;
+    border-radius: 14px 14px 0 0;
     font-size: 1.5rem;
     font-weight: bold;
-    text-shadow: 0 0 10px #00ff00;
+    text-shadow: 0 0 10px var(--neon-green);
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.history-icon, .user-logo {
-    background: #00ffff;
-    color: #ff00ff;
-    border: 2px solid #00ff00;
-    box-shadow: 0 0 10px #00ff00;
+.history-icon, .user-logo, .login-signup-buttons button {
+    border: 2px solid var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
 }
 
 .login-signup-buttons button {
-    background: #00ff00;
-    color: #000000;
-    border: 2px solid #ff00ff;
-    box-shadow: 0 0 10px #00ffff;
-}
-
-.login-signup-buttons button:hover {
-    background: #ff00ff;
-    color: #00ffff;
+    background: var(--neon-green);
+    color: var(--black);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .chat-box {
-    background: #1a1a1a;
-    color: #00ff00;
+    flex: 1;
+    overflow-y: auto;
+    background: var(--dark-bg);
+    color: var(--neon-green);
+    padding: 15px;
+    scroll-behavior: smooth;
 }
 
 .chat-message.user {
-    background: #ff00ff;
-    color: #000000;
+    background: var(--neon-pink);
+    color: var(--black);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-self: flex-end;
 }
 
 .chat-message.bot {
-    background: #00ffff;
-    color: #000000;
+    background: var(--neon-cyan);
+    color: var(--black);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 2px solid var(--neon-green);
+    background: var(--black);
 }
 
 #user-input {
-    border: 2px solid #00ff00;
-    color: #00ff00;
-}
-
-#user-input:focus {
-    border-color: #ff00ff;
-    box-shadow: 0 0 10px #ff00ff;
+    flex: 1;
+    padding: 10px;
+    border: 2px solid var(--neon-green);
+    border-radius: 8px;
+    color: var(--neon-green);
+    font-size: 1rem;
+    margin-right: 10px;
 }
 
 #send-btn {
-    background: #00ff00;
-    color: #000000;
-    border: 2px solid #ff00ff;
-    box-shadow: 0 0 10px #00ffff;
+    background: var(--neon-green);
+    color: var(--black);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-#send-btn:hover {
-    background: #ff00ff;
-    color: #00ffff;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 95%;
+        height: 95%;
+    }
+
+    .chat-header {
+        font-size: 1.2rem;
+    }
+
+    .login-signup-buttons button {
+        padding: 6px 8px;
+        font-size: 0.9rem;
+    }
+
+    #user-input {
+        font-size: 0.9rem;
+    }
+
+    #send-btn {
+        padding: 8px 16px;
+    }
 }
 
-.typing-indicator {
-    color: #ff00ff;
-}
+@media (max-width: 480px) {
+    .chat-header {
+        font-size: 1rem;
+    }
 
-.modal {
-    background: rgba(0, 0, 0, 0.8);
-}
+    .login-signup-buttons button {
+        padding: 5px 6px;
+        font-size: 0.8rem;
+    }
 
-.modal-content {
-    background: #1a1a1a;
-    color: #00ff00;
-    box-shadow: 0 0 20px #00ffff;
-}
+    #user-input {
+        font-size: 0.8rem;
+    }
 
-.modal-content button {
-    background: #00ff00;
-    color: #000000;
-}
-
-.modal-content button:hover {
-    background: #ff00ff;
-    color: #00ffff;
-}
-
-.classic-info {
-    color: #00ff00;
-    text-shadow: 0 0 10px #ff00ff;
+    #send-btn {
+        padding: 6px 12px;
+    }
 }
