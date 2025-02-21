@@ -1,64 +1,34 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aayush-tech07</title>
+    <title>Chatbot - Aayush Tech</title>
 </head>
 <body>
-    <div class="chat-container">
+    <div class="chat-container" id="chat-container">
         <div class="chat-header">
             <span class="history-icon" id="history-icon">History</span>
             <div class="user-logo" id="user-logo"></div>
-            <div class="login-signup-buttons" id="login-signup-buttons">
-                <button id="login-btn">Login</button>
-                <button id="signup-btn">Sign Up</button>
-            </div>
             <div class="logo-container" id="logo-container">
-                <img src="path-to-your-logo.png" alt="Aayush Tech Logo" class="logo" id="logo">
+                <img src="470870229_511524491908105_2284164329881879149_n.png" alt="Aayush Tech Logo" class="logo" id="logo">
             </div>
-            
         </div>
-        <div class="chat-box" id="chat-box">
-            <!-- Chat messages will be displayed here -->
-        </div>
+        <div class="chat-box" id="chat-box"></div>
         <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Type a message...">
+            <input type="text" id="user-input" placeholder="Type a message..." />
             <button id="send-btn">Send</button>
         </div>
         <div class="history-modal modal" id="history-modal">
             <div class="modal-content">
-                <span class="close-modal-btn" id="close-history-btn"></span>
+                <span class="close-modal-btn" id="close-history-btn">X</span>
                 <h2>Chat History</h2>
-                <div id="history-list">
-                    <!-- History items will be displayed here -->
-                </div>
-            </div>
-        </div>
-        <div class="login-modal modal" id="login-modal">
-            <div class="modal-content">
-                <span class="close-modal-btn" id="close-login-btn"></span>
-                <h2>Login</h2>
-                <form id="login-form">
-                    <input type="email" id="login-email" placeholder="Email" required>
-                    <input type="password" id="login-password" placeholder="Password" required>
-                    <button type="submit">Login</button>
-                </form>
-            </div>
-        </div>
-        <div class="signup-modal modal" id="signup-modal">
-            <div class="modal-content">
-                <span class="close-modal-btn" id="close-signup-btn"></span>
-                <h2>Sign Up</h2>
-                <form id="signup-form">
-                    <input type="text" id="signup-username" placeholder="Username" required>
-                    <input type="email" id="signup-email" placeholder="Email" required>
-                    <input type="password" id="signup-password" placeholder="Password" required>
-                    <button type="submit">Sign Up</button>
-                </form>
+                <div id="history-list"></div>
             </div>
         </div>
     </div>
-<script type="module" src="chatbot.js"></script>
+
+    <script src="chatbot.js"></script>
 </body>
 </html>
