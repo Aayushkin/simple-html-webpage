@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         userLogo.style.display = 'flex';
         chatContainer.style.display = 'block'; // Show the chat after successful login
     } else {
-        window.location.href = 'login.html'; // If not logged in, redirect to login page
+        window.location.href = 'index1.html'; // If not logged in, redirect to login page
     }
 
     // Add message to chat
